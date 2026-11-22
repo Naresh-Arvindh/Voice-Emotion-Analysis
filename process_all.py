@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import kagglehub
-from load_audio import load_and_clean_audio
+from load_audio import load_and_clean_audio 
 from mfcc_features import get_audio_features
 
 def run_preprocessing_pipeline():
@@ -16,9 +16,7 @@ def run_preprocessing_pipeline():
         "05": "angry", "06": "fearful", "07": "disgust", "08": "surprised"
     }
     
-    print("Querying kagglehub for the local dataset location...")
     DYNAMIC_DATASET_PATH = kagglehub.dataset_download("uwrfkaggler/ravdess-emotional-speech-audio")
-    print(f"Dataset located at: {DYNAMIC_DATASET_PATH}")
     
     for root, _, files in os.walk(DYNAMIC_DATASET_PATH):
         for file in files:
